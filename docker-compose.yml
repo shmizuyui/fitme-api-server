@@ -2,16 +2,16 @@ version: '3'
 
 services:
   db:
-    image: mysql:8.0.29
+    image: mysql:8.0
     environment:
       MYSQL_USER: user
       MYSQL_ROOT_PASSWORD: fitpass
     ports:
-      - "3306:3306"
+      - "3307:3306"
     volumes:
       - mysql_data:/var/lib/mysql
 
-  web:
+  app:
     build: .
     command: bash -c "rm -f tmp/pids/server.pid && bundle exec rails s -p 3000 -b '0.0.0.0'"
     volumes:
