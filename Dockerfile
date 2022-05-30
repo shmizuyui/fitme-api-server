@@ -7,13 +7,16 @@ RUN apk add --no-cache -t .build-dependencies \
     alpine-sdk \
     build-base \
     mysql-client \
- && apk add --no-cache \ 
+ && apk add --no-cache \
+    xz \ 
     bash \
     mysql-dev \
     nodejs \
     tzdata \
     yarn \
- && gem install bundler:2.0.2 \
+    vim \
+ && gem install bundler:2.3.14 \
+ && bundle config set force_ruby_platform true \
  && bundle install \
  && apk del --purge .build-dependencies
 
