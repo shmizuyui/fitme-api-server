@@ -4,4 +4,10 @@ class Api::V1::User::LessonsController < ApplicationController
     response = form.index
     render json: response
   end
+
+  def show
+    form = Api::V1::User::Lessons::ShowForm.new(params)
+    response = form.show
+    render json: response
+  end
 end
