@@ -2,7 +2,7 @@ class Api::V1::User::LessonsResponse
   class << self
     def base_response(lessons)
       {
-        lessons: lessons.map { |lesson| build_lesson(lesson) }
+        lessons: lessons.map { |lesson|build_lesson(lesson) }
       }
     end
 
