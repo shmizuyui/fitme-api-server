@@ -1,0 +1,11 @@
+ja:
+  activerecord:
+    models:
+      lesson: レッスン
+    attributes:
+      lesson:
+        title: タイトル
+        price: 金額
+        category: カテゴリー
+        time: 時間
+        content: 内容

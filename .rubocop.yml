@@ -1,3 +1,8 @@
+require:
+  - rubocop-rspec
+  - rubocop-performance
+  - rubocop-rails
+
 Rails:
   Enabled: true
 
@@ -35,4 +40,7 @@ Style/Documentation:
 
 # 文字列に値が代入されて変わっていないかチェック（無効）
 Style/FrozenStringLiteralComment:
+  Enabled: false
+
+RSpec/ContextWording:
   Enabled: false
