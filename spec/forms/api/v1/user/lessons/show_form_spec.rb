@@ -12,5 +12,16 @@ RSpec.describe 'Api::V1::User::Lessons::ShowForm' do
         expect(show_form.errors[:id]).to be_present
       end
     end
+
+    context 'idがある場合' do
+      let(:lesson) { create(:lesson) }
+      let(:params) { { id: lesson.id } }
+
+      it '正しいレスポンスを返すこと' do
+        expect(show_form.show).to eq ApiResponse.base_response(
+          Api::V1::User::LessonsResponse.show_success(lesson), nil, STATUS_SUCCESS
+        )
+      end
+    end
   end
 end
