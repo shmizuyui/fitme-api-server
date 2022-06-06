@@ -10,20 +10,20 @@ class Api::V1::User::Lessons::ShowForm
   end
 
   def show
-    lesson = Lesson.eager_load.find_by(id: valid_params[:id])
+    lesson = Lesson.find_by(id: valid_params[:id])
 
     unless lesson
-      return ErrorResponse.base_response("#{I18n.t("activerecord.models.lesson")}#{I18n.t("errors.not_found")}",STATUS_NOT_FOUND)
+      return ErrorResponse.base_response("#{I18n.t('activerecord.models.lesson')}#{I18n.t('errors.not_found')}", STATUS_NOT_FOUND)
     end
 
-    ApiResponse.base_response(Api::V1::User::lessonResponse.base_response(lesson), nil, STATUS_SUCCESS)
+    ApiResponse.base_response(Api::V1::User::LessonsResponse.show_success(lesson), nil, STATUS_SUCCESS)
   end
 
   private
 
-    def valid_params
-      {
-        id: id,
-      }
-    end
+  def valid_params
+    {
+      id:
+    }
+  end
 end
