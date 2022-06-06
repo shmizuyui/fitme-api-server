@@ -7,7 +7,12 @@ class Api::V1::User::LessonsController < ApplicationController
 
   def show
     form = Api::V1::User::Lessons::ShowForm.new(params)
-    response = form.show
-    render json: response
+
+    if form.valid?
+      response = form.show
+      render json: response
+    else
+      render json: ErrorResponse.base_response(I18n.t('errors.bad_request'), STATUS_BAD_REQUEST)
+    end
   end
 end
