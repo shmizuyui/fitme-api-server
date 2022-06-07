@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe 'Api::V1::Admin::Users::IndexForm' do
+RSpec.describe 'Api::V1::User::Lessons::IndexForm' do
   describe '#index' do
     let(:index_form) { Api::V1::User::Lessons::IndexForm.new }
 
@@ -9,7 +9,7 @@ RSpec.describe 'Api::V1::Admin::Users::IndexForm' do
 
       it '正しいレスポンスが返ってくること' do
         expect(index_form.index).to eq ApiResponse.base_response(
-          Api::V1::User::LessonsResponse.base_response(lessons), nil, STATUS_SUCCESS
+          Api::V1::User::LessonsResponse.index_success(lessons), nil, STATUS_SUCCESS
         )
       end
     end

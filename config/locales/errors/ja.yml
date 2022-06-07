@@ -1,0 +1,4 @@
+ja:
+  errors:
+    bad_request: "無効なリクエストです"
+    not_found: "が見つかりません"
