@@ -7,6 +7,10 @@ class Api::V1::User::Lessons::IndexForm
 
   def initialize(params)
     @page = params[:page]
+    @categories = params[:category]
+    @max_price = params[:max_price]
+    @min_price = params[:min_price]
+    @gender = params[:gender]
   end
 
   def index

@@ -4,6 +4,9 @@ Rails.application.routes.draw do
       namespace :user do
         resources :lessons, only: %i[index show]
         resources :trainers, only: %i[index show]
+        namespace :lesson do
+          resources :searches, only: :index
+        end
       end
     end
   end
