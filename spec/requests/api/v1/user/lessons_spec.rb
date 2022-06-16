@@ -3,10 +3,11 @@ require 'rails_helper'
 describe 'GET /api/v1/user/lessons' do
   context '正常系' do
     let(:lesson) { create(:lesson) }
+    let(:params) { { page: 1 } }
 
     before do
       lesson
-      get api_v1_user_lessons_path
+      get api_v1_user_lessons_path, params:
     end
 
     it { expect(response).to have_http_status :ok }
