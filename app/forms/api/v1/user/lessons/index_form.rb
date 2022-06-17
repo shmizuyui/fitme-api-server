@@ -10,7 +10,7 @@ class Api::V1::User::Lessons::IndexForm
   end
 
   def index
-    lessons = Lesson.all.page(valid_params[:page]).per(10)
+    lessons = Lesson.all.page(valid_params[:page])
     ApiResponse.base_response(Api::V1::User::LessonsResponse.index_success(lessons), nil, STATUS_SUCCESS)
   end
 
