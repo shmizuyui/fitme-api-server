@@ -15,6 +15,7 @@ RUN apk add --no-cache -t .build-dependencies \
     tzdata \
     yarn \
     vim \
+    git \
  && gem install bundler:2.3.14 \
  && bundle config set force_ruby_platform true \
  && bundle install \
