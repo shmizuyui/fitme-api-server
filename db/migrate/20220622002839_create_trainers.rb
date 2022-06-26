@@ -3,10 +3,10 @@ class CreateTrainers < ActiveRecord::Migration[7.0]
     create_table :trainers do |t|
       t.string :name, null: false
       t.string :name_kana, null: false
-      t.string :gender, null: false
-      t.integer :history_year, null: false
-      t.string :image, null: false
-      t.text :message, null: false
+      t.integer :gender, null: false, default: 1
+      t.integer :history_year
+      t.string :image
+      t.text :message
 
       t.timestamps
     end
