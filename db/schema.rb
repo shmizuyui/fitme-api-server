@@ -26,10 +26,10 @@ ActiveRecord::Schema[7.0].define(version: 2022_06_24_013603) do
   create_table "trainers", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "name", null: false
     t.string "name_kana", null: false
-    t.string "gender", null: false
-    t.integer "history_year", null: false
-    t.string "image", null: false
-    t.text "message", null: false
+    t.integer "gender", default: 1, null: false
+    t.integer "history_year"
+    t.string "image"
+    t.text "message"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
