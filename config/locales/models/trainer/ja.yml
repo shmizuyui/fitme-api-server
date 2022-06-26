@@ -1,7 +1,7 @@
 ja:
   activerecord:
     models:
-      trainer: レッスン
+      trainer: トレーナー
     attributes:
       trainer:
         name: 名前

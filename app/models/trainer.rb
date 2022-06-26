@@ -6,4 +6,6 @@ class Trainer < ApplicationRecord
   mount_uploader :image, ImageUploader
 
   validates :name, :name_kana, :gender, :history_year, :image, :message, presence: true
+
+  enum gender: { male: 1, female: 2 }
 end
