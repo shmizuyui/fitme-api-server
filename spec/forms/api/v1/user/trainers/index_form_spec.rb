@@ -1,16 +1,16 @@
 require 'rails_helper'
 
-RSpec.describe 'Api::V1::User::Lessons::IndexForm' do
-  describe '#index' do
-    let(:index_form) { Api::V1::User::Lessons::IndexForm.new(params) }
+RSpec.describe 'Api::V1::User::Trainers::IndexForm' do
+  describe 'index' do
+    let(:index_form) { Api::V1::User::Trainers::IndexForm.new(params) }
 
     context 'pageがある場合' do
-      before { create_list(:lesson, 12) }
+      before { create_list(:trainer, 12) }
 
       let(:params) { { page: 1 } }
 
       it '1ページ目に最初の10件が表示されること' do
-        expect(index_form.index[:data][:lessons].size).to eq 10
+        expect(index_form.index[:data][:trainers].size).to eq 10
       end
     end
 

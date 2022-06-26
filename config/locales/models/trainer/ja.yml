@@ -1,0 +1,12 @@
+ja:
+  activerecord:
+    models:
+      trainer: トレーナー
+    attributes:
+      trainer:
+        name: 名前
+        name_kana: カナ
+        gender: 性別
+        history_year: 歴
+        image: 画像
+        message: メッセージ
