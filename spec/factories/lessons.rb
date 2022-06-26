@@ -6,6 +6,6 @@ FactoryBot.define do
     time { Faker::Number.number(digits: 2) }
     content { Faker::Lorem.paragraph }
 
-    association :trainer
+    trainer
   end
 end
