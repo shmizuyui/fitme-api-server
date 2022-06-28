@@ -4,6 +4,7 @@ FactoryBot.define do
     name_kana { 'ナマエ カナ' }
     gender { rand(1..2) }
     history_year { Faker::Number.number(digits: 2) }
+    career { Faker::Lorem.paragraph }
     image { Rack::Test::UploadedFile.new(Rails.root.join('spec/fixtures/test.jpg')) }
     message { Faker::Lorem.paragraph }
   end
