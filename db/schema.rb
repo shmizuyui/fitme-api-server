@@ -28,6 +28,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_06_24_013603) do
     t.string "name_kana", null: false
     t.integer "gender", default: 1, null: false
     t.integer "history_year"
+    t.text "career"
     t.string "image"
     t.text "message"
     t.datetime "created_at", null: false
