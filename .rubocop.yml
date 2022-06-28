@@ -44,3 +44,7 @@ Style/FrozenStringLiteralComment:
 
 RSpec/ContextWording:
   Enabled: false
+
+MethodLength:
+  CountComments: true  # count full line comments?
+  Max: 20
