@@ -5,12 +5,32 @@ RSpec.describe 'Api::V1::User::Lessons::IndexForm' do
     let(:index_form) { Api::V1::User::Lessons::IndexForm.new(params) }
 
     context 'pageがある場合' do
-      before { create_list(:lesson, 12) }
-
+      let(:lessons) { create_list(:lesson, 11, category: :muscle) }
       let(:params) { { page: 1 } }
 
-      it '1ページ目に最初の10件が表示されること' do
+      before do
+        create(:lesson, category: :yoga)
+        lessons
+      end
+
+      it 'レッスンが10件返されること' do
         expect(index_form.index[:data][:lessons].size).to eq 10
+      end
+
+      context 'queryがある場合' do
+        let(:params) { { categories: ['muscle'], page: 1 } }
+
+        it '該当するカテゴリーのレッスンのみが返されること' do
+          expect(index_form.index[:data][:lessons].to_a.map { |lesson| lesson[:category] }).to eq Array.new(10, 'muscle')
+        end
+      end
+
+      context 'queryがない場合' do
+        it '任意のカテゴリーのレッスンが返されること' do
+          expect(
+            index_form.index[:data][:lessons].to_a.map { |lesson| lesson[:category] }
+          ).to eq Array.new(9, 'muscle').unshift('yoga')
+        end
       end
     end
 
