@@ -5,12 +5,14 @@ RSpec.describe 'Api::V1::User::Lessons::IndexForm' do
     let(:index_form) { Api::V1::User::Lessons::IndexForm.new(params) }
 
     context 'pageがある場合' do
-      before do
-        @other_lesson = create(:lesson, category: :yoga)
-        @lessons = create_list(:lesson, 11, category: :muscle)
-      end
-
+      let(:other_lesson) { create(:lesson, category: :yoga) }
       let(:params) { { page: 1 } }
+      let(:lessons) { create_list(:lesson, 11, category: :muscle) }
+
+      before do
+        other_lesson
+        lessons
+      end
 
       it 'レッスンが10件返されること' do
         expect(index_form.index[:data][:lessons].size).to eq 10
