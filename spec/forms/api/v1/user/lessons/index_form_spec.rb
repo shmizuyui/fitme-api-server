@@ -5,12 +5,11 @@ RSpec.describe 'Api::V1::User::Lessons::IndexForm' do
     let(:index_form) { Api::V1::User::Lessons::IndexForm.new(params) }
 
     context 'pageがある場合' do
-      let(:other_lesson) { create(:lesson, category: :yoga) }
-      let(:params) { { page: 1 } }
       let(:lessons) { create_list(:lesson, 11, category: :muscle) }
+      let(:params) { { page: 1 } }
 
       before do
-        other_lesson
+        create(:lesson, category: :yoga)
         lessons
       end
 
