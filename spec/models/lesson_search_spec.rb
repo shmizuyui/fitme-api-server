@@ -28,7 +28,7 @@ RSpec.describe LessonSearch, type: :model do
       it { is_expected.to match_array [matched_lesson] }
     end
 
-    context 'min_priice, max_price' do
+    context 'min_price, max_price' do
       let(:query) { { min_price: 2000, max_price: 4000 } }
       let(:matched_lesson) { create(:lesson, price: 3000) }
 
