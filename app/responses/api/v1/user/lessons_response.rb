@@ -3,7 +3,8 @@ class Api::V1::User::LessonsResponse
     def index_success(lessons)
       {
         lessons: lessons.map { |lesson| build_lesson(lesson) },
-        is_last_page: lessons.current_page == lessons.total_pages
+        current_page: lessons.current_page,
+        total_page: lessons.total_pages
       }
     end
 
@@ -22,7 +23,16 @@ class Api::V1::User::LessonsResponse
         price: lesson.price,
         category: lesson.category,
         time: lesson.time,
-        content: lesson.content
+        content: lesson.content,
+        trainer: build_trainer(lesson.trainer)
+      }
+    end
+
+    def build_trainer(trainer)
+      {
+        image: trainer.image.url,
+        name: trainer.name,
+        gender: trainer.gender
       }
     end
   end

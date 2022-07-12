@@ -48,3 +48,6 @@ RSpec/ContextWording:
 MethodLength:
   CountComments: true  # count full line comments?
   Max: 20
+
+RSpec/NestedGroups:
+  Max: 5

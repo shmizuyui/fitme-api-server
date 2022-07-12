@@ -33,6 +33,7 @@ gem 'bootsnap', require: false
 gem 'dotenv-rails'
 gem 'kaminari'
 gem 'rails-i18n'
+gem 'ransack'
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
 # gem "image_processing", "~> 1.2"
 gem 'carrierwave', '~> 2.0'
