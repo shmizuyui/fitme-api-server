@@ -10,7 +10,7 @@ class Api::V1::User::Trainers::IndexForm
   end
 
   def index
-    trainers = Trainer.eager_load(:lessons).all.page(valid_params[:page])
+    trainers = Trainer.eager_load(:lessons).page(valid_params[:page])
     ApiResponse.base_response(Api::V1::User::TrainersResponse.index_success(trainers), nil, STATUS_SUCCESS)
   end
 

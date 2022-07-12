@@ -33,6 +33,7 @@ RSpec.describe LessonSearch, type: :model do
       let(:matched_lesson) { create(:lesson, price: 3000) }
 
       before do
+        matched_lesson
         create(:lesson, price: 1000)
       end
 
