@@ -3,7 +3,8 @@ class Api::V1::User::TrainersResponse
     def index_success(trainers)
       {
         trainers: trainers.map { |trainer| build_trainer(trainer) },
-        is_last_page: trainers.current_page == trainers.total_pages
+        current_page: trainers.current_page,
+        total_page: trainers.total_pages
       }
     end
 
