@@ -5,12 +5,32 @@ RSpec.describe 'Api::V1::User::Trainers::IndexForm' do
     let(:index_form) { Api::V1::User::Trainers::IndexForm.new(params) }
 
     context 'pageがある場合' do
-      before { create_list(:trainer, 12) }
-
+      let(:trainers) { create_list(:trainer, 11, gender: :male) }
       let(:params) { { page: 1 } }
 
-      it '1ページ目に最初の10件が表示されること' do
+      before do
+        create(:trainer, gender: :female)
+        trainers
+      end
+
+      it 'トレーナーが10件が返されること' do
         expect(index_form.index[:data][:trainers].size).to eq 10
+      end
+
+      context 'queryがある場合' do
+        let(:params) { { genders: ['male'], page: 1 } }
+
+        it '該当する性別のトレーナーのみが返されること' do
+          expect(index_form.index[:data][:trainers].to_a.map { |trainer| trainer[:gender] }).to eq Array.new(10, 'male')
+        end
+      end
+
+      context 'queryがない場合' do
+        it '任意の性別のトレーナーが返されること' do
+          expect(
+            index_form.index[:data][:trainers].to_a.map { |trainer| trainer[:gender] }
+          ).to eq Array.new(9, 'male').unshift('female')
+        end
       end
     end
 

@@ -7,6 +7,9 @@ Rails.application.routes.draw do
         namespace :lesson do
           resources :searches, only: %i[index]
         end
+        namespace :trainer do
+          resources :searches, only: %i[index]
+        end
       end
     end
   end
