@@ -1,4 +1,6 @@
 class Api::V1::User::Auth::RegistrationsController < DeviseTokenAuth::RegistrationsController
+  # frozen_string_literal: true
+
   private
 
   def sign_up_params
