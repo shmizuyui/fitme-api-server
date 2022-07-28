@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_06_24_013603) do
+ActiveRecord::Schema[7.0].define(version: 2022_07_28_050914) do
   create_table "lessons", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "title", null: false
     t.integer "price", null: false
@@ -49,7 +49,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_06_24_013603) do
     t.string "unconfirmed_email"
     t.string "name", null: false
     t.string "name_kana", null: false
-    t.string "image"
+    t.string "avatar"
     t.string "email", null: false
     t.integer "gender", default: 1, null: false
     t.text "tokens"
