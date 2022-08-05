@@ -29,26 +29,25 @@ RSpec.describe 'Api::V1::User::Auth::Registrations', type: :request do
     let(:user) { create(:user) }
 
     before do
-      put api_v1_user_user_registration_path(user), params:, headers: headers
+      put api_v1_user_user_registration_path(user), params:, headers:
     end
-    
+
     context '編集ができるとき' do
-      let(:params) { {name:'名前', name_kana:'ナマエ', email:'email', password: 'passpass', password_confirmation:'passpass'} }
-      let(:headers) {user.create_new_auth_token}
-      
+      let(:params) { { name: '名前', name_kana: 'ナマエ', email: 'test@email.com' } }
+      let(:headers) { user.create_new_auth_token }
+
       it { expect(response).to have_http_status :ok }
       it { expect(JSON.parse(response.body)['data']['name']).to eq '名前' }
+      it { expect(JSON.parse(response.body)['data']['name_kana']).to eq 'ナマエ' }
+      it { expect(JSON.parse(response.body)['data']['email']).to eq 'test@email.com' }
+    end
 
+    context '編集ができないとき' do
+      let(:params) { { name: '名前', name_kana: 'ナマエ', email: 'test@email.com' } }
+      let(:headers) { [''] }
 
-      # it 'データが更新される' do
-      #   subject
-      #   user.reload
-      #   expect(user.name).to eq '名前'
-      #   expect(user.name_kana).to eq 'ナマエ'
-      #   expect(user.email).to eq 'email'
-      #   expect(user.password).to eq 'passpass'
-      #   expect(user.password_confirmation).to eq 'passpass'
-      # end
+      it { expect(JSON.parse(response.body)['status']).to eq 'error' }
+      it { expect(JSON.parse(response.body)['errors']).to eq ['ユーザーが見つかりません。'] }
     end
   end
 end
