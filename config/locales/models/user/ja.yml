@@ -7,6 +7,6 @@ ja:
         name: 名前
         name_kana: カナ
         gender: 性別
-        email: 歴
+        email: メールアドレス
         password: パスワード
         password_confirmation: パスワード（確認）
