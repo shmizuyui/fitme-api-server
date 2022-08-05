@@ -31,11 +31,11 @@ RSpec.describe 'Api::V1::User::Auth::Registrations', type: :request do
     before do
       put api_v1_user_user_registration_path(user), params:, headers: headers
     end
-    
+
     context '編集ができるとき' do
-      let(:params) { {name:'名前', name_kana:'ナマエ', email:'email', password: 'passpass', password_confirmation:'passpass'} }
-      let(:headers) {user.create_new_auth_token}
-      
+      let(:params) { { name:'名前', name_kana:'ナマエ', email:'test@email.com', password: 'new_password', password_confirmation: 'new_password' } }
+      let(:headers) { sign_in(user) }
+
       it { expect(response).to have_http_status :ok }
       it { expect(JSON.parse(response.body)['data']['name']).to eq '名前' }
 
