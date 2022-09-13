@@ -1,0 +1,8 @@
+ja:
+  activerecord:
+    models:
+      reservation: 予約
+    attributes:
+      reservation:
+      status: ステータス
+      start_at: 開始日時

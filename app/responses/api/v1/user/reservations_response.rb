@@ -11,6 +11,7 @@ class Api::V1::User::ReservationsResponse
     def build_reservation(reservation)
       {
         id: reservation.id,
+        start_at: reservation.start_at
       }
     end
   end

@@ -1,13 +1,14 @@
 class Api::V1::User::Reservations::CreateForm
   include ActiveModel::Model
 
-  attr_reader :user_id, :lesson_id
+  attr_reader :user_id, :lesson_id, :start_at
 
-  validates :user_id, :lesson_id, presence: true
+  validates :user_id, :lesson_id, :start_at, presence: true
 
   def initialize(params)
     @user_id = params[:user_id]
     @lesson_id = params[:lesson_id]
+    @start_at = params[:start_at]
   end
 
   def create
@@ -23,7 +24,7 @@ class Api::V1::User::Reservations::CreateForm
       return ErrorResponse.base_response("#{I18n.t('activerecord.models.lesson')}#{I18n.t('errors.not_found')}", STATUS_NOT_FOUND)
     end
 
-    reservation = user.reservations.create!(lesson: lesson)
+    reservation = user.reservations.create!(lesson: lesson, start_at: valid_params[:start_at])
 
     ApiResponse.base_response(Api::V1::User::ReservationsResponse.create_success(reservation), nil, STATUS_SUCCESS)
   
@@ -37,6 +38,7 @@ class Api::V1::User::Reservations::CreateForm
     {
       user_id:,
       lesson_id:,
+      start_at:,
     }
   end
 end
