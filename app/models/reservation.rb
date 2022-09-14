@@ -4,5 +4,5 @@ class Reservation < ApplicationRecord
 
   validates :status, :start_at, presence: true
 
-  enum status: { requested: 1, approved: 2, rejected: 3, canceled: 4}
+  enum status: { requested: 1, approved: 2, rejected: 3, canceled: 4 }
 end

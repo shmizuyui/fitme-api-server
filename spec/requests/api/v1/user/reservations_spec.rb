@@ -1,18 +1,16 @@
 require 'rails_helper'
 
-RSpec.describe "Api::V1::User::Reservations", type: :request do
-  describe "POST /api/v1/user/reservations" do
+RSpec.describe 'Api::V1::User::Reservations', type: :request do
+  describe 'POST /api/v1/user/reservations' do
     context '正常系' do
-      let(:reservation) { create(:reservation) }
-      let(:params) { { lesson: lesson, start_at: reservation.start_at } }
+      let(:lesson) { create(:lesson) }
+      let(:user) { create(:user) }
+      let(:reservation) { build(:reservation, user_id: user.id) }
+      let(:params) { { lesson_id: lesson.id, start_at: reservation.start_at } }
 
-      before do
-        reservation
-        post api_v1_user_reservations_path, params:
+      it 'データが作成できる' do
+        expect { post '/api/v1/user/reservations', params: }.to change(Reservation, :count).by(1)
       end
-      it { expect(response).to have_http_status :ok }
-      it { expect(JSON.parse(response.body)['data']['reservation']['id']).to eq reservation.id }
-      it { expect(JSON.parse(response.body)['data']['reservation']['start_at']).to eq reservation.start_at }
     end
   end
 end

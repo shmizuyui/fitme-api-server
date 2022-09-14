@@ -10,6 +10,7 @@ LineLength:
   Max: 130
 
 AllCops:
+  NewCops: enable
   Exclude:
     - 'bin/*'
     - 'config/environments/*'
@@ -51,3 +52,9 @@ MethodLength:
 
 RSpec/NestedGroups:
   Max: 5
+
+Metrics/AbcSize:
+  Max: 25
+
+Rails/Pluck:
+  Enabled: false

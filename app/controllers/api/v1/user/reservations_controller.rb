@@ -1,6 +1,5 @@
 class Api::V1::User::ReservationsController < ApplicationController
   def create
-    
     form = Api::V1::User::Reservations::CreateForm.new(params)
 
     if form.valid?

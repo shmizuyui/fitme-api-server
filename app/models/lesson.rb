@@ -2,7 +2,7 @@ class Lesson < ApplicationRecord
   paginates_per 10
 
   belongs_to :trainer
-  has_many :reservations
+  has_many :reservations, dependent: :destroy
 
   validates :title, :price, :category, :time, presence: true
 
