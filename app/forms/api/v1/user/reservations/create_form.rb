@@ -1,17 +1,18 @@
 class Api::V1::User::Reservations::CreateForm
   include ActiveModel::Model
 
-  attr_reader :lesson_id, :start_at
+  attr_reader :user_id, :lesson_id, :start_at
 
-  validates :lesson_id, :start_at, presence: true
+  validates :user_id, :lesson_id, :start_at, presence: true
 
   def initialize(params)
+    @user_id = params[:user_id]
     @lesson_id = params[:lesson_id]
     @start_at = params[:start_at]
   end
 
   def create
-    user = User.first
+    user = User.find_by(id: valid_params[:user_id])
 
     unless user
       return ErrorResponse.base_response("#{I18n.t('activerecord.models.user')}#{I18n.t('errors.not_found')}", STATUS_NOT_FOUND)
@@ -34,6 +35,7 @@ class Api::V1::User::Reservations::CreateForm
 
   def valid_params
     {
+      user_id:,
       lesson_id:,
       start_at:
     }
