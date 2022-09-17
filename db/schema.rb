@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_07_28_050914) do
+ActiveRecord::Schema[7.0].define(version: 2022_09_09_094245) do
   create_table "lessons", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "title", null: false
     t.integer "price", null: false
@@ -21,6 +21,17 @@ ActiveRecord::Schema[7.0].define(version: 2022_07_28_050914) do
     t.datetime "updated_at", null: false
     t.bigint "trainer_id"
     t.index ["trainer_id"], name: "index_lessons_on_trainer_id"
+  end
+
+  create_table "reservations", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "lesson_id"
+    t.integer "status", default: 1, null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.datetime "start_at", null: false
+    t.index ["lesson_id"], name: "index_reservations_on_lesson_id"
+    t.index ["user_id"], name: "index_reservations_on_user_id"
   end
 
   create_table "trainers", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
@@ -62,4 +73,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_07_28_050914) do
   end
 
   add_foreign_key "lessons", "trainers"
+  add_foreign_key "reservations", "lessons"
+  add_foreign_key "reservations", "users"
 end

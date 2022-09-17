@@ -21,14 +21,14 @@ RSpec.describe 'Api::V1::User::Lessons::IndexForm' do
         let(:params) { { categories: ['muscle'], page: 1 } }
 
         it '該当するカテゴリーのレッスンのみが返されること' do
-          expect(index_form.index[:data][:lessons].to_a.map { |lesson| lesson[:category] }).to eq Array.new(10, 'muscle')
+          expect(index_form.index[:data][:lessons].to_a.pluck(:category)).to eq Array.new(10, 'muscle')
         end
       end
 
       context 'queryがない場合' do
         it '任意のカテゴリーのレッスンが返されること' do
           expect(
-            index_form.index[:data][:lessons].to_a.map { |lesson| lesson[:category] }
+            index_form.index[:data][:lessons].to_a.pluck(:category)
           ).to eq Array.new(9, 'muscle').unshift('yoga')
         end
       end

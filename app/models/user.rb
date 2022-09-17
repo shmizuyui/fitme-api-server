@@ -5,6 +5,8 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   include DeviseTokenAuth::Concerns::User
 
+  has_many :reservations, dependent: :destroy
+
   mount_uploader :avatar, AvatarUploader
 
   validates :name, :gender, :email, :name_kana, presence: true
