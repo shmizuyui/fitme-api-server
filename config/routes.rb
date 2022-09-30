@@ -10,7 +10,7 @@ Rails.application.routes.draw do
         end
         resources :lessons, only: %i[index show]
         resources :trainers, only: %i[index show]
-        resources :reservations, only: %i[create]
+        resources :reservations, only: %i[create index]
         namespace :lesson do
           resources :searches, only: %i[index]
         end
