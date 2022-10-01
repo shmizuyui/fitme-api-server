@@ -8,9 +8,8 @@ class Api::V1::User::ReservationsResponse
 
     def index_success(reservations)
       {
-        reservations: reservations.map { |reservation| build_reservation(reservation) },
+        reservations: reservations.map { |reservation| build_reservation(reservation) }
       }
-
     end
 
     private
