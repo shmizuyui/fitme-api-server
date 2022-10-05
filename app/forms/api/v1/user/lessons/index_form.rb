@@ -1,7 +1,7 @@
 class Api::V1::User::Lessons::IndexForm
   include ActiveModel::Model
 
-  attr_reader :page, :categories, :genders, :min_price, :max_price
+  attr_reader :page, :categories, :genders, :min_price, :max_price, :order
 
   validates :page, presence: true
 
@@ -11,6 +11,7 @@ class Api::V1::User::Lessons::IndexForm
     @genders = params[:genders]
     @min_price = params[:min_price]
     @max_price = params[:max_price]
+    @order = params[:order]
   end
 
   def index
@@ -20,7 +21,15 @@ class Api::V1::User::Lessons::IndexForm
               else
                 Lesson.eager_load(:trainer)
               end
-    paginated_lessons = lessons.page(valid_params[:page])
+    sorts = case valid_params[:order]
+            when 'low_price'
+              lessons.order('price ASC')
+            when 'high_price'
+              lessons.order('price DESC')
+            when 'created_at_desc'
+              lessons.order('lessons.created_at DESC')
+            end
+    paginated_lessons = sorts.page(valid_params[:page])
     ApiResponse.base_response(Api::V1::User::LessonsResponse.index_success(paginated_lessons), nil, STATUS_SUCCESS)
   end
 
@@ -28,6 +37,7 @@ class Api::V1::User::Lessons::IndexForm
 
   def valid_params
     {
+      order:,
       page:,
       query: {
         categories:,
