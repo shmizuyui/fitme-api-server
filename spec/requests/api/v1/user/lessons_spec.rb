@@ -4,7 +4,7 @@ describe 'LessonAPI' do
   describe 'GET /api/v1/user/lessons' do
     context '正常系' do
       let(:lesson) { create(:lesson) }
-      let(:params) { { page: 1 } }
+      let(:params) { { page: 1, order: 'low_price' } }
 
       before do
         lesson
