@@ -5,11 +5,11 @@ RSpec.describe 'Api::V1::User::Lessons::IndexForm' do
     let(:index_form) { Api::V1::User::Lessons::IndexForm.new(params) }
 
     context 'pageがある場合' do
-      let(:lessons) { create_list(:lesson, 11, category: :muscle) }
-      let(:params) { { page: 1 } }
+      let(:lessons) { create_list(:lesson, 11, category: :muscle, created_at: '2022.12.12 12:12:12') }
+      let(:params) { { page: 1, order: 'created_at_desc' } }
 
       before do
-        create(:lesson, category: :yoga)
+        create(:lesson, category: :yoga, created_at: '2022.12.13 12:12:12')
         lessons
       end
 
@@ -18,7 +18,7 @@ RSpec.describe 'Api::V1::User::Lessons::IndexForm' do
       end
 
       context 'queryがある場合' do
-        let(:params) { { categories: ['muscle'], page: 1 } }
+        let(:params) { { categories: ['muscle'], page: 1, order: 'created_at_desc' } }
 
         it '該当するカテゴリーのレッスンのみが返されること' do
           expect(index_form.index[:data][:lessons].to_a.pluck(:category)).to eq Array.new(10, 'muscle')
@@ -26,7 +26,7 @@ RSpec.describe 'Api::V1::User::Lessons::IndexForm' do
       end
 
       context 'queryがない場合' do
-        it '任意のカテゴリーのレッスンが返されること' do
+        it '新着順に任意のカテゴリーのレッスンが返されること' do
           expect(
             index_form.index[:data][:lessons].to_a.pluck(:category)
           ).to eq Array.new(9, 'muscle').unshift('yoga')
