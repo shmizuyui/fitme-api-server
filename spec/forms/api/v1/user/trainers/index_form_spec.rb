@@ -5,11 +5,11 @@ RSpec.describe 'Api::V1::User::Trainers::IndexForm' do
     let(:index_form) { Api::V1::User::Trainers::IndexForm.new(params) }
 
     context 'pageがある場合' do
-      let(:trainers) { create_list(:trainer, 11, gender: :male) }
-      let(:params) { { page: 1 } }
+      let(:trainers) { create_list(:trainer, 11, gender: :male, created_at: '2022.12.12 12:12:12') }
+      let(:params) { { page: 1, order: 'created_at_desc' } }
 
       before do
-        create(:trainer, gender: :female)
+        create(:trainer, gender: :female, created_at: '2022.12.13 12:12:12')
         trainers
       end
 
@@ -18,7 +18,7 @@ RSpec.describe 'Api::V1::User::Trainers::IndexForm' do
       end
 
       context 'queryがある場合' do
-        let(:params) { { genders: ['male'], page: 1 } }
+        let(:params) { { genders: ['male'], page: 1, order: 'created_at_desc' } }
 
         it '該当する性別のトレーナーのみが返されること' do
           expect(index_form.index[:data][:trainers].to_a.map { |trainer| trainer[:gender] }).to eq Array.new(10, 'male')
@@ -26,7 +26,7 @@ RSpec.describe 'Api::V1::User::Trainers::IndexForm' do
       end
 
       context 'queryがない場合' do
-        it '任意の性別のトレーナーが返されること' do
+        it '新着順に任意の性別のトレーナーが返されること' do
           expect(
             index_form.index[:data][:trainers].to_a.map { |trainer| trainer[:gender] }
           ).to eq Array.new(9, 'male').unshift('female')

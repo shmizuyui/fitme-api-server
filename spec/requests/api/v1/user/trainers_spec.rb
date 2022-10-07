@@ -4,7 +4,7 @@ describe 'TrainerAPI' do
   describe 'GET /api/v1/user/trainers' do
     context '正常系' do
       let(:trainer) { create(:trainer) }
-      let(:params) { { page: 1 } }
+      let(:params) { { page: 1, order: 'short_history' } }
 
       before do
         trainer

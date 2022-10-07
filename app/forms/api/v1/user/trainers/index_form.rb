@@ -1,7 +1,7 @@
 class Api::V1::User::Trainers::IndexForm
   include ActiveModel::Model
 
-  attr_reader :page, :categories, :genders, :min_history_year
+  attr_reader :page, :categories, :genders, :min_history_year, :order
 
   validates :page, presence: true
 
@@ -10,6 +10,7 @@ class Api::V1::User::Trainers::IndexForm
     @categories = params[:categories]
     @genders = params[:genders]
     @min_history_year = params[:min_history_year]
+    @order = params[:order]
   end
 
   def index
@@ -19,8 +20,15 @@ class Api::V1::User::Trainers::IndexForm
                else
                  Trainer.eager_load(:lessons)
                end
-
-    paginated_trainers = trainers.page(valid_params[:page])
+    sorts = case valid_params[:order]
+            when 'short_history'
+              trainers.order('history_year ASC')
+            when 'long_history'
+              trainers.order('history_year DESC')
+            when 'created_at_desc'
+              trainers.order('trainers.created_at DESC')
+            end
+    paginated_trainers = sorts.page(valid_params[:page])
     ApiResponse.base_response(Api::V1::User::TrainersResponse.index_success(paginated_trainers), nil, STATUS_SUCCESS)
   end
 
@@ -28,6 +36,7 @@ class Api::V1::User::Trainers::IndexForm
 
   def valid_params
     {
+      order:,
       page:,
       query: {
         categories:,
