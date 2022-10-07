@@ -21,9 +21,9 @@ class Api::V1::User::Trainers::IndexForm
                  Trainer.eager_load(:lessons)
                end
     sorts = case valid_params[:order]
-            when 'low_history'
+            when 'short_history'
               trainers.order('history_year ASC')
-            when 'high_history'
+            when 'long_history'
               trainers.order('history_year DESC')
             when 'created_at_desc'
               trainers.order('trainers.created_at DESC')
