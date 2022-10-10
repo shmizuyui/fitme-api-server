@@ -272,6 +272,9 @@ GEM
     ruby-progressbar (1.11.0)
     ruby-vips (2.1.4)
       ffi (~> 1.12)
+    seed-fu (2.3.9)
+      activerecord (>= 3.1)
+      activesupport (>= 3.1)
     shoulda-matchers (5.1.0)
       activesupport (>= 5.2.0)
     spring (4.0.0)
@@ -315,6 +318,7 @@ DEPENDENCIES
   rubocop-performance
   rubocop-rails
   rubocop-rspec
+  seed-fu
   shoulda-matchers
   spring
   tzinfo-data
