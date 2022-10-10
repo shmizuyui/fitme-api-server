@@ -235,11 +235,11 @@ Lesson.seed do |s|
 end
 
 Lesson.seed do |s|
-  s.title = '楽しく筋トレ'
+  s.title = '自重トレーニング'
   s.price = Faker::Number.number(digits: 4)
   s.category = 'muscle'
   s.time = Faker::Number.number(digits: 2)
-  s.content = '器具を使わずに家でできる筋トレを教えます'
+  s.content = '器具を使わず、自分の体重だけで筋トレを行います。'
   s.trainer_id = 24
 end
 
@@ -264,10 +264,28 @@ Lesson.seed do |s|
 end
 
 Lesson.seed do |s|
-  s.title = '全身引き締め'
+  s.title = '初めてのヨガ'
+  s.price = Faker::Number.number(digits: 4)
+  s.category = 'yoga'
+  s.time = Faker::Number.number(digits: 2)
+  s.content = '初めての方でもできるヨガです。'
+  s.trainer_id = 27
+end
+
+Lesson.seed do |s|
+  s.title = '器具を使わない有酸素運動'
   s.price = Faker::Number.number(digits: 4)
   s.category = 'aerobic_exercise'
   s.time = Faker::Number.number(digits: 2)
-  s.content = '全身引き締めに効果抜群。'
+  s.content = '器具がなくてもお家でできる有酸素運動を一緒にやりましょう！'
   s.trainer_id = 27
+end
+
+Lesson.seed do |s|
+  s.title = '楽しく筋トレ'
+  s.price = Faker::Number.number(digits: 4)
+  s.category = 'muscle'
+  s.time = Faker::Number.number(digits: 2)
+  s.content = '器具を使わずに家でできる筋トレを教えます'
+  s.trainer_id = 28
 end

@@ -5,7 +5,7 @@ Trainer.seed do |s|
   s.gender = 'male'
   s.history_year = Faker::Number.number(digits: 2)
   s.career = '◯◯年からパーソナルトレーナーとして活動開始。'
-  s.image = Rails.root.join('db/fixtures/files/trainer.png').open
+  s.image = Rails.root.join('db/fixtures/files/trainer_image_06.jpg').open
   s.message = 'よろしくおねがします'
 end
 
@@ -16,7 +16,7 @@ Trainer.seed do |s|
   s.gender = 'female'
   s.history_year = Faker::Number.number(digits: 2)
   s.career = '◯◯年からパーソナルトレーナーとして活動開始。'
-  s.image = Rails.root.join('db/fixtures/files/trainer.png').open
+  s.image = Rails.root.join('db/fixtures/files/trainer_image_07.jpg').open
   s.message = 'よろしくおねがします'
 end
 
@@ -27,7 +27,7 @@ Trainer.seed do |s|
   s.gender = 'female'
   s.history_year = Faker::Number.number(digits: 2)
   s.career = '◯◯年からパーソナルトレーナーとして活動開始。'
-  s.image = Rails.root.join('db/fixtures/files/trainer.png').open
+  s.image = Rails.root.join('db/fixtures/files/trainer_image_01.jpg').open
   s.message = 'よろしくおねがします'
 end
 
@@ -38,7 +38,7 @@ Trainer.seed do |s|
   s.gender = 'female'
   s.history_year = Faker::Number.number(digits: 2)
   s.career = '◯◯年からパーソナルトレーナーとして活動開始。'
-  s.image = Rails.root.join('db/fixtures/files/trainer.png').open
+  s.image = Rails.root.join('db/fixtures/files/trainer_image_04.jpg').open
   s.message = 'よろしくおねがします'
 end
 
@@ -49,7 +49,7 @@ Trainer.seed do |s|
   s.gender = 'male'
   s.history_year = Faker::Number.number(digits: 2)
   s.career = '◯◯年からパーソナルトレーナーとして活動開始。'
-  s.image = Rails.root.join('db/fixtures/files/trainer.png').open
+  s.image = Rails.root.join('db/fixtures/files/trainer_image_05.jpg').open
   s.message = 'よろしくおねがします'
 end
 
@@ -60,7 +60,7 @@ Trainer.seed do |s|
   s.gender = 'male'
   s.history_year = Faker::Number.number(digits: 2)
   s.career = '◯◯年からパーソナルトレーナーとして活動開始。'
-  s.image = Rails.root.join('db/fixtures/files/trainer.png').open
+  s.image = Rails.root.join('db/fixtures/files/trainer_image_06.jpg').open
   s.message = 'よろしくおねがします'
 end
 
@@ -71,7 +71,7 @@ Trainer.seed do |s|
   s.gender = 'female'
   s.history_year = Faker::Number.number(digits: 2)
   s.career = '◯◯年からパーソナルトレーナーとして活動開始。'
-  s.image = Rails.root.join('db/fixtures/files/trainer.png').open
+  s.image = Rails.root.join('db/fixtures/files/trainer_image_07.jpg').open
   s.message = 'よろしくおねがします'
 end
 
@@ -82,7 +82,7 @@ Trainer.seed do |s|
   s.gender = 'male'
   s.history_year = Faker::Number.number(digits: 2)
   s.career = '◯◯年からパーソナルトレーナーとして活動開始。'
-  s.image = Rails.root.join('db/fixtures/files/trainer.png').open
+  s.image = Rails.root.join('db/fixtures/files/trainer_image_08.jpg').open
   s.message = 'よろしくおねがします'
 end
 
@@ -93,7 +93,7 @@ Trainer.seed do |s|
   s.gender = 'male'
   s.history_year = Faker::Number.number(digits: 2)
   s.career = '◯◯年からパーソナルトレーナーとして活動開始。'
-  s.image = Rails.root.join('db/fixtures/files/trainer.png').open
+  s.image = Rails.root.join('db/fixtures/files/trainer_image_05.jpg').open
   s.message = 'よろしくおねがします'
 end
 
@@ -104,7 +104,7 @@ Trainer.seed do |s|
   s.gender = 'male'
   s.history_year = Faker::Number.number(digits: 2)
   s.career = '◯◯年からパーソナルトレーナーとして活動開始。'
-  s.image = Rails.root.join('db/fixtures/files/trainer.png').open
+  s.image = Rails.root.join('db/fixtures/files/trainer_image_02.jpg').open
   s.message = 'よろしくおねがします'
 end
 
@@ -115,7 +115,7 @@ Trainer.seed do |s|
   s.gender = 'female'
   s.history_year = Faker::Number.number(digits: 2)
   s.career = '◯◯年からパーソナルトレーナーとして活動開始。'
-  s.image = Rails.root.join('db/fixtures/files/trainer.png').open
+  s.image = Rails.root.join('db/fixtures/files/trainer_image_01.jpg').open
   s.message = 'よろしくおねがします'
 end
 
@@ -126,7 +126,7 @@ Trainer.seed do |s|
   s.gender = 'female'
   s.history_year = Faker::Number.number(digits: 2)
   s.career = '◯◯年からパーソナルトレーナーとして活動開始。'
-  s.image = Rails.root.join('db/fixtures/files/trainer.png').open
+  s.image = Rails.root.join('db/fixtures/files/trainer_image_03.jpg').open
   s.message = 'よろしくおねがします'
 end
 
@@ -137,7 +137,7 @@ Trainer.seed do |s|
   s.gender = 'male'
   s.history_year = Faker::Number.number(digits: 2)
   s.career = '◯◯年からパーソナルトレーナーとして活動開始。'
-  s.image = Rails.root.join('db/fixtures/files/trainer.png').open
+  s.image = Rails.root.join('db/fixtures/files/trainer_image_05.jpg').open
   s.message = 'よろしくおねがします'
 end
 
@@ -148,7 +148,7 @@ Trainer.seed do |s|
   s.gender = 'male'
   s.history_year = Faker::Number.number(digits: 2)
   s.career = '◯◯年からパーソナルトレーナーとして活動開始。'
-  s.image = Rails.root.join('db/fixtures/files/trainer.png').open
+  s.image = Rails.root.join('db/fixtures/files/trainer_image_05.jpg').open
   s.message = 'よろしくおねがします'
 end
 
@@ -159,7 +159,7 @@ Trainer.seed do |s|
   s.gender = 'male'
   s.history_year = Faker::Number.number(digits: 2)
   s.career = '◯◯年からパーソナルトレーナーとして活動開始。'
-  s.image = Rails.root.join('db/fixtures/files/trainer.png').open
+  s.image = Rails.root.join('db/fixtures/files/trainer_image_06.jpg').open
   s.message = 'よろしくおねがします'
 end
 
@@ -170,7 +170,7 @@ Trainer.seed do |s|
   s.gender = 'female'
   s.history_year = Faker::Number.number(digits: 2)
   s.career = '◯◯年からパーソナルトレーナーとして活動開始。'
-  s.image = Rails.root.join('db/fixtures/files/trainer.png').open
+  s.image = Rails.root.join('db/fixtures/files/trainer_image_04.jpg').open
   s.message = 'よろしくおねがします'
 end
 
@@ -181,7 +181,7 @@ Trainer.seed do |s|
   s.gender = 'female'
   s.history_year = Faker::Number.number(digits: 2)
   s.career = '◯◯年からパーソナルトレーナーとして活動開始。'
-  s.image = Rails.root.join('db/fixtures/files/trainer.png').open
+  s.image = Rails.root.join('db/fixtures/files/trainer_image_01.jpg').open
   s.message = 'よろしくおねがします'
 end
 
@@ -192,7 +192,7 @@ Trainer.seed do |s|
   s.gender = 'male'
   s.history_year = Faker::Number.number(digits: 2)
   s.career = '◯◯年からパーソナルトレーナーとして活動開始。'
-  s.image = Rails.root.join('db/fixtures/files/trainer.png').open
+  s.image = Rails.root.join('db/fixtures/files/trainer_image_02.jpg').open
   s.message = 'よろしくおねがします'
 end
 
@@ -203,7 +203,7 @@ Trainer.seed do |s|
   s.gender = 'female'
   s.history_year = Faker::Number.number(digits: 2)
   s.career = '◯◯年からパーソナルトレーナーとして活動開始。'
-  s.image = Rails.root.join('db/fixtures/files/trainer.png').open
+  s.image = Rails.root.join('db/fixtures/files/trainer_image_01.jpg').open
   s.message = 'よろしくおねがします'
 end
 
@@ -214,7 +214,7 @@ Trainer.seed do |s|
   s.gender = 'male'
   s.history_year = Faker::Number.number(digits: 2)
   s.career = '◯◯年からパーソナルトレーナーとして活動開始。'
-  s.image = Rails.root.join('db/fixtures/files/trainer.png').open
+  s.image = Rails.root.join('db/fixtures/files/trainer_image_08.jpg').open
   s.message = 'よろしくおねがします'
 end
 
@@ -225,7 +225,7 @@ Trainer.seed do |s|
   s.gender = 'female'
   s.history_year = Faker::Number.number(digits: 2)
   s.career = '◯◯年からパーソナルトレーナーとして活動開始。'
-  s.image = Rails.root.join('db/fixtures/files/trainer.png').open
+  s.image = Rails.root.join('db/fixtures/files/trainer_image_03.jpg').open
   s.message = 'よろしくおねがします'
 end
 
@@ -236,7 +236,7 @@ Trainer.seed do |s|
   s.gender = 'male'
   s.history_year = Faker::Number.number(digits: 2)
   s.career = '◯◯年からパーソナルトレーナーとして活動開始。'
-  s.image = Rails.root.join('db/fixtures/files/trainer.png').open
+  s.image = Rails.root.join('db/fixtures/files/trainer_image_02.jpg').open
   s.message = 'よろしくおねがします'
 end
 
@@ -247,60 +247,61 @@ Trainer.seed do |s|
   s.gender = 'male'
   s.history_year = Faker::Number.number(digits: 2)
   s.career = '◯◯年からパーソナルトレーナーとして活動開始。'
-  s.image = Rails.root.join('db/fixtures/files/trainer.png').open
-  s.message = 'よろしくおねがします'
-end
-
-Trainer.seed do |s|
-  s.name = '大塚 蓮'
-  s.name_kana = 'オオツカ レン'
-  s.gender = 'male'
-  s.history_year = Faker::Number.number(digits: 2)
-  s.career = '◯◯年からパーソナルトレーナーとして活動開始。'
-  s.image = Rails.root.join('db/fixtures/files/trainer.png').open
+  s.image = Rails.root.join('db/fixtures/files/trainer_image_08.jpg').open
   s.message = 'よろしくおねがします'
 end
 
 Trainer.seed do |s|
   s.id = 24
-  s.name = '村上 涼'
-  s.name_kana = 'ムラカミ リョウ'
+  s.name = '大塚 蓮'
+  s.name_kana = 'オオツカ レン'
   s.gender = 'male'
   s.history_year = Faker::Number.number(digits: 2)
   s.career = '◯◯年からパーソナルトレーナーとして活動開始。'
-  s.image = Rails.root.join('db/fixtures/files/trainer.png').open
+  s.image = Rails.root.join('db/fixtures/files/trainer_image_05.jpg').open
   s.message = 'よろしくおねがします'
 end
 
 Trainer.seed do |s|
   s.id = 25
-  s.name = '小島 優'
-  s.name_kana = 'コジマ ユウ'
-  s.gender = 'female'
+  s.name = '村上 涼'
+  s.name_kana = 'ムラカミ リョウ'
+  s.gender = 'male'
   s.history_year = Faker::Number.number(digits: 2)
   s.career = '◯◯年からパーソナルトレーナーとして活動開始。'
-  s.image = Rails.root.join('db/fixtures/files/trainer.png').open
+  s.image = Rails.root.join('db/fixtures/files/trainer_image_02.jpg').open
   s.message = 'よろしくおねがします'
 end
 
 Trainer.seed do |s|
   s.id = 26
-  s.name = '青木 美穂'
-  s.name_kana = 'アオキ ミホ'
+  s.name = '小島 優'
+  s.name_kana = 'コジマ ユウ'
   s.gender = 'female'
   s.history_year = Faker::Number.number(digits: 2)
   s.career = '◯◯年からパーソナルトレーナーとして活動開始。'
-  s.image = Rails.root.join('db/fixtures/files/trainer.png').open
+  s.image = Rails.root.join('db/fixtures/files/trainer_image_01.jpg').open
   s.message = 'よろしくおねがします'
 end
 
 Trainer.seed do |s|
   s.id = 27
+  s.name = '青木 美穂'
+  s.name_kana = 'アオキ ミホ'
+  s.gender = 'female'
+  s.history_year = Faker::Number.number(digits: 2)
+  s.career = '◯◯年からパーソナルトレーナーとして活動開始。'
+  s.image = Rails.root.join('db/fixtures/files/trainer_image_04.jpg').open
+  s.message = 'よろしくおねがします'
+end
+
+Trainer.seed do |s|
+  s.id = 28
   s.name = '大塚 杏奈'
   s.name_kana = 'オオツカ アンナ'
   s.gender = 'female'
   s.history_year = Faker::Number.number(digits: 2)
   s.career = '◯◯年からパーソナルトレーナーとして活動開始。'
-  s.image = Rails.root.join('db/fixtures/files/trainer.png').open
+  s.image = Rails.root.join('db/fixtures/files/trainer_image_07.jpg').open
   s.message = 'よろしくおねがします'
 end
