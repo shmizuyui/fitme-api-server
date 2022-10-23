@@ -50,6 +50,6 @@ test:
 #
 production:
   <<: *default
-  database: fitme_api_server_production
-  username: fitme_api_server
+  database: heroku_eae458f445db379
+  username: b1264bb2517f74
   password: <%= ENV["FITME_API_SERVER_DATABASE_PASSWORD"] %>
